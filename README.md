@@ -56,7 +56,8 @@ results/
   lung_crop/          notebook 07 – lung bounding boxes, crop QC, shortcut probes on crops
   round3/             notebook 08 – pooled estimates, equivalence tests, replicate counts, probe CIs,
                       collapsed-run and MobileNetV2 sensitivity, per-seed table, revised figures
-  supplementary/      CSV versions of Supplementary Tables S1, S4 and S5
+  supplementary/      CSV versions of Supplementary Tables S1, S4, S5 and S6
+scripts/              seed_level_crosscheck.py – paired t and sign-flip permutation tests (Table S6)
 figures/              figures as they appear in the manuscript
 ```
 
@@ -105,6 +106,7 @@ Python packages: see [`requirements.txt`](requirements.txt).
 | Shortcut probes with 95% CIs (§III-A, §IV-G) | `results/round3/shortcut_probes_ci.csv` |
 | Collapsed run, MobileNetV2 matched baseline, medians | `collapsed_run_sensitivity.csv`, `mobilenet_matched_baseline.csv`, `seed_medians.csv` |
 | Fig. 8 (Grad-CAM energy per class) | `results/round3/fig_gradcam_energy_v2.png`, `gradcam_class_chance.csv`, `gradcam_box_n.csv` |
+| Seed-level t / permutation cross-check (Suppl. Table S6) | `python scripts/seed_level_crosscheck.py` → `results/supplementary/table_s6_seed_level_crosscheck.csv` |
 | Suppl. Table S1 (every run, both checkpoints) | `results/round3/per_seed_all_runs.csv`, `results/supplementary/table_s1_per_seed_all_runs.csv` |
 
 ### Notes for reviewers
