@@ -1,0 +1,5 @@
+probe,test_acc,test_macro_f1
+32×32 thumbnail — full image,0.7535667963683528,0.6890424785672479
+32×32 thumbnail — lung crop,0.8456549935149157,0.8231339599716128
+border only (central 60% blanked) — full image,0.7250324254215305,0.6567064137437447
+border only (central 60% blanked) — lung crop,0.8236057068741893,0.7849213784620106

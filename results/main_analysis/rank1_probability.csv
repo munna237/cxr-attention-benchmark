@@ -1,0 +1,25 @@
+,0
+ResNet50+CBAM (balanced),0.461
+ResNet50+SE (balanced),0.3935
+ResNet50+CBAM (imbalanced),0.038
+ResNet50+Baseline (imbalanced),0.035
+ResNet50+SE (imbalanced),0.0275
+DenseNet121+CBAM (imbalanced),0.02
+ResNet50+Baseline (balanced),0.0145
+DenseNet121+SE (balanced),0.008
+DenseNet121+CBAM (balanced),0.0025
+Custom CNN+SE (imbalanced),0.0
+Custom CNN+SE (balanced),0.0
+Custom CNN+Baseline (imbalanced),0.0
+Custom CNN+CBAM (imbalanced),0.0
+Custom CNN+CBAM (balanced),0.0
+Custom CNN+Baseline (balanced),0.0
+DenseNet121+Baseline (balanced),0.0
+MobileNetV2+Baseline (imbalanced),0.0
+MobileNetV2+Baseline (balanced),0.0
+MobileNetV2+CBAM (imbalanced),0.0
+MobileNetV2+CBAM (balanced),0.0
+DenseNet121+SE (imbalanced),0.0
+DenseNet121+Baseline (imbalanced),0.0
+MobileNetV2+SE (balanced),0.0
+MobileNetV2+SE (imbalanced),0.0

@@ -1,0 +1,15 @@
+{
+ "n_images": 7135,
+ "n_qc_fail": 13,
+ "margin": 0.08,
+ "qc_rule": [
+  0.08,
+  0.7
+ ],
+ "probes": {
+  "32\u00d732 thumbnail \u2014 full image": 0.689,
+  "32\u00d732 thumbnail \u2014 lung crop": 0.8231,
+  "border only (central 60% blanked) \u2014 full image": 0.6567,
+  "border only (central 60% blanked) \u2014 lung crop": 0.7849
+ }
+}

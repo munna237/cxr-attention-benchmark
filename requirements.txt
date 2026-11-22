@@ -1,0 +1,12 @@
+# Versions used on Kaggle (Python 3.10/3.11). Minimums are what the notebooks need.
+torch>=2.0
+torchvision>=0.15
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+Pillow>=9.5
+imagehash>=4.3        # notebook 01 (perceptual hashing)
+torchxrayvision>=1.2  # notebooks 02 (CXR pretraining), 05 and 07 (lung masks)
+nbformat>=5.9         # only to read the notebooks outside Jupyter
