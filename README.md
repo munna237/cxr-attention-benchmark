@@ -129,7 +129,7 @@ Python packages: see [`requirements.txt`](requirements.txt).
 
 The following outputs were produced on Kaggle and are being uploaded during review; a tagged release (`v1.0-review`, archived on Zenodo) will be made once they are in place:
 
-- per-image softmax outputs (`preds.csv`) and training histories of all 215 runs;
+- per-image softmax outputs (`preds.csv`) and training histories of all 224 runs;
 - data-audit outputs of notebook 01 (duplicate groups, leakage flags, test-set exclusion lists, shortcut-probe tables);
 - Grad-CAM per-image and per-seed tables of notebook 05;
 - the compute table of notebook 04.
