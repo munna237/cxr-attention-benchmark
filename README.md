@@ -114,13 +114,13 @@ Python packages: see [`requirements.txt`](requirements.txt).
 | Replicate counts on each side of zero | `results/round3/crossing_counts.csv` |
 | Shortcut probes with 95% CIs (§III-A, §IV-G) | `results/round3/shortcut_probes_ci.csv` |
 | Collapsed run, MobileNetV2 matched baseline, medians | `collapsed_run_sensitivity.csv`, `mobilenet_matched_baseline.csv`, `seed_medians.csv` |
-| Fig. 8 (Grad-CAM energy per class) | `results/round3/fig_gradcam_energy_v2.png`, `gradcam_class_chance.csv`, `gradcam_box_n.csv` |
+| Fig. 8 (Grad-CAM energy per class) | `python scripts/fig_gradcam_energy.py` → `figures/fig_gradcam_energy_v3.png` (from `outputs/gradcam/gradcam_per_image.csv`) |
 | Seed-level t / permutation tests with MDE (Suppl. Table S6) | `results/round5/f1_best.csv`; permutation p-values from `scripts/seed_level_crosscheck.py` |
 | Suppl. Table S1 (every run, both checkpoints) | `results/round3/per_seed_all_runs.csv`, `results/supplementary/table_s1_per_seed_all_runs.csv` |
 
 ### Notes for reviewers
 
-- **Checkpoint used.** Headline results use the lowest-validation-loss checkpoint ("best"). The final-epoch checkpoint is a co-primary sensitivity analysis (`results/round5/f1_final.csv`, Table S7); per-run values at both checkpoints are in Table S1.
+- **Checkpoint used.** Headline results use the lowest-validation-loss checkpoint ("best"). The final-epoch checkpoint is a sensitivity analysis (`results/round5/f1_final.csv`, Table S7); per-run values at both checkpoints are in Table S1.
 - **Collapsed run.** `customcnn_se_imbalanced_s1` collapsed (macro F1 0.764). The paper reports five-seed values and gives the analysis without this run as a sensitivity check.
 - **Fourth seed.** The attention-learning-rate sensitivity variant has four seeds (0, 1, 2, 42); all four are used.
 - **Original single-seed runs.** The original single-seed runs of the first submission (FP32) are not part of these results. All reported runs, including seed 42, were retrained under the protocol above. Notebook 02 now also contains FP32 seed-42 reruns (`amp=False`) and dropout-matched MobileNetV2 baselines (queue `REV4`).
