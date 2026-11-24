@@ -208,3 +208,17 @@ for (ck, fam), idx in BI[BI.family.isin(['BALANCING', 'INTERACTION'])].groupby([
     BI.loc[idx, 'p_t_holm'] = holm(BI.loc[idx, 'p_t']); BI.loc[idx, 'p_perm_holm'] = holm(BI.loc[idx, 'p_perm'])
 BI.to_csv(f'{OUT}/balancing_interaction_seed_level.csv', index=False)
 print(BI.round(4).to_string())
+
+# ── seed-level check of the SE-versus-CBAM and ablation families (bootstrap-primary in the paper) ──
+import ast
+E2 = pd.read_csv(os.path.join(ROOT, 'results', 'main_analysis', 'effects_labeled.csv'))
+def f2(c): a, t, cond, v = c; return PS[(PS.arch == a) & (PS.attention == t) & (PS.condition == cond) & (PS.variant == v)].set_index('seed').f1_best
+rows = []
+for fam in ['SE-vs-CBAM', 'ABLATION']:
+    for r in E2[E2.family == fam].itertuples():
+        a, b = [ast.literal_eval(x) for x in r.compare.split('  vs  ')]; x = (f2(a) - f2(b)).dropna(); lo, hi = tci(x)
+        rows.append(dict(family=fam, effect=r.effect, delta=x.mean(), t_lo=lo, t_hi=hi, p_t=stats.ttest_1samp(x, 0).pvalue, p_boot_holm=r.p_holm))
+SC = pd.DataFrame(rows)
+for fam, idx in SC.groupby('family').groups.items(): SC.loc[idx, 'p_t_holm'] = holm(SC.loc[idx, 'p_t'])
+SC.to_csv(f'{OUT}/se_cbam_ablation_seed_level.csv', index=False)
+print(SC.groupby('family')[['p_t', 'p_t_holm']].min())
