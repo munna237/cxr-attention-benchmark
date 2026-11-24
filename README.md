@@ -52,7 +52,7 @@ No images are redistributed here. File-level outputs refer to images by their re
 ## Repository layout
 
 ```
-notebooks/            the nine Kaggle notebooks, in run order (self-contained; model code shared verbatim)
+notebooks/            the ten Kaggle notebooks, in run order (self-contained; model code shared verbatim)
 results/
   main_analysis/      notebook 03 – main tables, labelled effects, per-class results, checkpoints, ablations
   calibration/        notebook 06 – ECE / Brier / NLL tables and attention effects
@@ -82,6 +82,7 @@ All notebooks were run on Kaggle; training used one NVIDIA Tesla T4. Each notebo
 | 05 | `05_gradcam_quant` | GPU, ~1 h | original dataset + 02 outputs | Grad-CAM localisation tables and figures |
 | 06 | `06_calibration` | CPU, ~5 min | 02 outputs | `results/calibration/` |
 | 08 | `08_revision_round3` | CPU, ~15 min | 02, 05 and 07 outputs + original dataset | `results/round3/` |
+| 10 | `10_export_deposit` | CPU, ~2 min | 01, 02, 04 and 05 outputs | `deposit.zip`: per-run predictions, histories and metrics (no weights), audit, compute and Grad-CAM tables |
 | 09 | `09_revision_round5` | CPU, ~10 min | 02 and 05 outputs | MobileNetV2 dropout-matched and FP32 seed-42 comparisons, within-class Grad-CAM, reliability bin counts |
 
 How the training notebook behaves:
@@ -125,14 +126,20 @@ Python packages: see [`requirements.txt`](requirements.txt).
 
 ---
 
-## Still to be added
+## Deposit status
 
-The following outputs were produced on Kaggle and are being uploaded during review; a tagged release (`v1.0-review`, archived on Zenodo) will be made once they are in place:
+| Item | Status |
+|---|---|
+| Code and notebooks 01–10 | in this repository |
+| Macro F1 / accuracy of all 224 runs, both checkpoints | `results/round5/per_seed_all_runs.csv` |
+| Analysis outputs behind every table (incl. seed-level Tables 7, 13, S6–S8 and Grad-CAM within class, S9) | `results/` |
+| Per-image softmax outputs (`preds.csv`), training histories and `metrics.json` of all 224 runs | **pending** – being exported from Kaggle with notebook 10 |
+| Data-audit outputs of notebook 01 (duplicate groups, leakage flags, test-set exclusion list, shortcut probes) | **pending** – notebook 10 |
+| Grad-CAM per-image and per-seed tables of notebook 05 | **pending** – notebook 10 |
+| Compute table of notebook 04 | **pending** – notebook 10 |
+| Tagged release and Zenodo DOI | **pending** – will be created once the items above are in place, before publication |
 
-- per-image softmax outputs (`preds.csv`) and training histories of all 224 runs;
-- data-audit outputs of notebook 01 (duplicate groups, leakage flags, test-set exclusion lists, shortcut-probe tables);
-- Grad-CAM per-image and per-seed tables of notebook 05;
-- the compute table of notebook 04.
+This table is updated as items are added.
 
 ---
 
