@@ -1,0 +1,97 @@
+metric,effect,delta,ci_lo,ci_hi,n_seeds,seeds_positive,p_boot,p_holm,CI_excludes_0,baseline
+ece,SE − Baseline | ResNet50 | imbalanced,-0.0091150989019144,-0.0233800882760111,0.0019652588168779,5,1,0.126,1.0,False,original
+cw_ece,SE − Baseline | ResNet50 | imbalanced,-0.0051609007123789,-0.0120601552776578,0.0009796077309786,5,0,0.14,1.0,False,original
+brier,SE − Baseline | ResNet50 | imbalanced,-0.0093285900414651,-0.0330441047517345,0.0085805698039347,5,1,0.428,1.0,False,original
+nll,SE − Baseline | ResNet50 | imbalanced,-0.0929062414748794,-0.2153776477333576,-0.0092221645409075,5,1,0.012,0.228,True,original
+ece,CBAM − Baseline | ResNet50 | imbalanced,0.0059992565332529,-0.0114127104137039,0.0192256779383128,5,4,0.461,1.0,False,original
+cw_ece,CBAM − Baseline | ResNet50 | imbalanced,0.004626402760596,-0.0041097247175199,0.0104907449780292,5,4,0.281,1.0,False,original
+brier,CBAM − Baseline | ResNet50 | imbalanced,0.0042604898111002,-0.0216570653240463,0.0275752844045516,5,3,0.709,1.0,False,original
+nll,CBAM − Baseline | ResNet50 | imbalanced,0.018241243874271,-0.0984227619468765,0.1273437689596164,5,3,0.738,1.0,False,original
+ece,SE − Baseline | DenseNet121 | imbalanced,-0.0100034803268046,-0.0254333694549772,0.0024562448628449,5,1,0.152,1.0,False,original
+cw_ece,SE − Baseline | DenseNet121 | imbalanced,-0.0032063680125642,-0.0078849615269236,0.0014393464404993,5,0,0.238,1.0,False,original
+brier,SE − Baseline | DenseNet121 | imbalanced,-0.0106182469880459,-0.0352572087880313,0.0069321454934046,5,2,0.355,1.0,False,original
+nll,SE − Baseline | DenseNet121 | imbalanced,-0.0776298024878652,-0.1369690762027726,-0.0273342726380215,5,0,0.0,0.0,True,original
+ece,CBAM − Baseline | DenseNet121 | imbalanced,-0.015365795936102,-0.0343315760771974,0.004200695753484,5,1,0.138,1.0,False,original
+cw_ece,CBAM − Baseline | DenseNet121 | imbalanced,-0.0062103434937778,-0.0180843247319869,0.0053510582683177,5,1,0.345,1.0,False,original
+brier,CBAM − Baseline | DenseNet121 | imbalanced,-0.0197269510570247,-0.0548739961633961,0.0139995906979335,5,1,0.277,1.0,False,original
+nll,CBAM − Baseline | DenseNet121 | imbalanced,-0.0803902735177084,-0.1691643530675073,0.000251758181679,5,1,0.052,0.7799999999999999,False,original
+ece,SE − Baseline | MobileNetV2 | imbalanced,-0.011438543563068454,-0.019702529181495555,-0.00235488382894087,5,0,0.01,0.24,True,dropout-matched
+cw_ece,SE − Baseline | MobileNetV2 | imbalanced,-0.008429587037681579,-0.012479330816260091,-0.0020963822025808583,5,0,0.004,0.096,True,dropout-matched
+brier,SE − Baseline | MobileNetV2 | imbalanced,-0.012417710150077126,-0.02426546794967979,-0.0011166034231593982,5,0,0.029,0.638,True,dropout-matched
+nll,SE − Baseline | MobileNetV2 | imbalanced,-0.034194481058792844,-0.06291580174937893,-0.00984497256343416,5,0,0.003,0.063,True,dropout-matched
+ece,CBAM − Baseline | MobileNetV2 | imbalanced,-0.008610872157043675,-0.016799156057192965,-0.00048415222365878904,5,0,0.04,0.92,True,dropout-matched
+cw_ece,CBAM − Baseline | MobileNetV2 | imbalanced,-0.0061949185061959166,-0.010040885405631117,-0.00019767715902469258,5,1,0.044,0.9239999999999999,True,dropout-matched
+brier,CBAM − Baseline | MobileNetV2 | imbalanced,-0.009655425529742384,-0.02201591852510343,0.0026252217307868725,5,1,0.117,1.0,False,dropout-matched
+nll,CBAM − Baseline | MobileNetV2 | imbalanced,-0.0332277446093744,-0.05853658583055825,-0.009178274700400267,5,0,0.005,0.1,True,dropout-matched
+ece,SE − Baseline | Custom CNN | imbalanced,0.006558438474566,-0.0131241595824327,0.0299934458409843,5,3,0.657,1.0,False,original
+cw_ece,SE − Baseline | Custom CNN | imbalanced,0.0110611816813861,-0.0096166082142901,0.0372035521051047,5,4,0.433,1.0,False,original
+brier,SE − Baseline | Custom CNN | imbalanced,0.0231015487830319,-0.0300358334474237,0.1009940365433927,5,3,0.583,1.0,False,original
+nll,SE − Baseline | Custom CNN | imbalanced,0.0226579762907734,-0.069770841860973,0.1257899437244974,5,3,0.644,1.0,False,original
+ece,CBAM − Baseline | Custom CNN | imbalanced,0.0042988987129795,-0.0102538644461548,0.0162867690493315,5,3,0.643,1.0,False,original
+cw_ece,CBAM − Baseline | Custom CNN | imbalanced,9.507909978448137e-05,-0.0083073694628413,0.0073874882689841,5,3,0.997,1.0,False,original
+brier,CBAM − Baseline | Custom CNN | imbalanced,-0.0071305904605501,-0.0289379049810558,0.0125938262426395,5,2,0.518,1.0,False,original
+nll,CBAM − Baseline | Custom CNN | imbalanced,0.0084084709530323,-0.0383007735573545,0.0487505658874471,5,3,0.667,1.0,False,original
+ece,SE − Baseline | ResNet50 | balanced,-0.0084077331419894,-0.0202502963783753,0.0054130362915466,5,1,0.207,1.0,False,original
+cw_ece,SE − Baseline | ResNet50 | balanced,-0.0035793361432183,-0.0104256831319761,0.0048360130382146,5,1,0.372,1.0,False,original
+brier,SE − Baseline | ResNet50 | balanced,-0.0107105785583414,-0.0333028268497973,0.0149451882468258,5,1,0.365,1.0,False,original
+nll,SE − Baseline | ResNet50 | balanced,-0.0549294191621172,-0.1552714881691242,0.0510357942583628,5,1,0.259,1.0,False,original
+ece,CBAM − Baseline | ResNet50 | balanced,-0.0046231770175285,-0.0142519238007517,0.0048673394759186,5,1,0.31,1.0,False,original
+cw_ece,CBAM − Baseline | ResNet50 | balanced,-0.0033020509346412,-0.0105120244355416,0.0031393742064402,5,2,0.335,1.0,False,original
+brier,CBAM − Baseline | ResNet50 | balanced,-0.0100553708060154,-0.0292585439291134,0.0080422828860036,5,1,0.266,1.0,False,original
+nll,CBAM − Baseline | ResNet50 | balanced,-0.0116333494342786,-0.0795527261252968,0.0776925172452665,5,1,0.699,1.0,False,original
+ece,SE − Baseline | DenseNet121 | balanced,-0.0089345170288852,-0.0212729578974491,0.0042555920215354,5,1,0.178,1.0,False,original
+cw_ece,SE − Baseline | DenseNet121 | balanced,-0.0046655848078452,-0.0099996530881268,0.0016841249513682,5,1,0.143,1.0,False,original
+brier,SE − Baseline | DenseNet121 | balanced,-0.015324964382065,-0.0316494798433656,0.0012020499343822,5,1,0.073,1.0,False,original
+nll,SE − Baseline | DenseNet121 | balanced,-0.0622534662513663,-0.1202317383413684,-0.0016483178476351,5,1,0.047,0.752,True,original
+ece,CBAM − Baseline | DenseNet121 | balanced,-0.0119351068204788,-0.0224199831014168,-0.0001652428156052,5,0,0.045,0.99,True,original
+cw_ece,CBAM − Baseline | DenseNet121 | balanced,-0.0063878138587472,-0.010656824829649,-0.0015574303800235,5,0,0.007,0.161,True,original
+brier,CBAM − Baseline | DenseNet121 | balanced,-0.0180502148922543,-0.0321695562911367,-0.0036965362170238,5,0,0.01,0.23,True,original
+nll,CBAM − Baseline | DenseNet121 | balanced,-0.0765785776142255,-0.1271634619679809,-0.0309091442481357,5,0,0.001,0.023,True,original
+ece,SE − Baseline | MobileNetV2 | balanced,0.0012423795716771818,-0.010384252510104814,0.012307531598438396,5,3,0.733,1.0,False,dropout-matched
+cw_ece,SE − Baseline | MobileNetV2 | balanced,0.003307313011259304,-0.003319591378808781,0.008238215654890043,5,4,0.278,1.0,False,dropout-matched
+brier,SE − Baseline | MobileNetV2 | balanced,0.013750430969111263,0.00506143541118512,0.02218637009599412,5,5,0.003,0.07200000000000001,True,dropout-matched
+nll,SE − Baseline | MobileNetV2 | balanced,0.024396791676632845,0.003083839990310753,0.0469029575653348,5,4,0.031,0.558,True,dropout-matched
+ece,CBAM − Baseline | MobileNetV2 | balanced,0.011463725574594838,-0.0013384232079627155,0.024570028995841365,5,5,0.092,1.0,False,dropout-matched
+cw_ece,CBAM − Baseline | MobileNetV2 | balanced,0.010225003888428851,0.0010326543695552688,0.01791817062977365,5,4,0.022,0.484,True,dropout-matched
+brier,CBAM − Baseline | MobileNetV2 | balanced,0.020798525203272168,7.398320078323662e-05,0.04595103104110326,5,3,0.049,0.98,True,dropout-matched
+nll,CBAM − Baseline | MobileNetV2 | balanced,0.04182304236208401,0.0020475885561361358,0.09003664837546006,5,4,0.034,0.5780000000000001,True,dropout-matched
+ece,SE − Baseline | Custom CNN | balanced,-0.002379140424048,-0.0234791833398097,0.0211032047537281,5,2,0.832,1.0,False,original
+cw_ece,SE − Baseline | Custom CNN | balanced,-0.0010606156705449,-0.0118318732386613,0.0105780198464032,5,2,0.861,1.0,False,original
+brier,SE − Baseline | Custom CNN | balanced,0.0024943534669956,-0.0202215050523811,0.0291166448991768,5,1,0.876,1.0,False,original
+nll,SE − Baseline | Custom CNN | balanced,0.0146942924712634,-0.0972739123449501,0.1340649990090241,5,2,0.813,1.0,False,original
+ece,CBAM − Baseline | Custom CNN | balanced,0.0123758837174812,-0.0007658677723079,0.0225453987638387,5,5,0.067,1.0,False,original
+cw_ece,CBAM − Baseline | Custom CNN | balanced,0.0020880619720481,-0.0052838936197237,0.0076243806117962,5,4,0.668,1.0,False,original
+brier,CBAM − Baseline | Custom CNN | balanced,0.0054993190774465,-0.0149038059052458,0.0256722841877953,5,3,0.559,1.0,False,original
+nll,CBAM − Baseline | Custom CNN | balanced,0.0933552464113152,0.0332999170071306,0.1735644495997381,5,5,0.002,0.044,True,original
+ece,CBAM − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0024873458689752,-0.0133285956813358,0.0092330352241117,5,2,0.728,1.0,False,original
+cw_ece,CBAM − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0027337760275952,-0.0074859016528782,0.0022365618619986,5,2,0.293,1.0,False,original
+brier,CBAM − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0040921182709731,-0.0166156212342531,0.0071290237046181,5,2,0.484,1.0,False,original
+nll,CBAM − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0131244765542955,-0.0420234027907142,0.0138091821282727,5,1,0.39,1.0,False,original
+ece,SE − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0028338618006378,-0.0101453665194576,0.0054658327656574,5,1,0.545,1.0,False,original
+cw_ece,SE − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0035356437584843,-0.0068910887018471,0.0002859723880571,5,0,0.067,1.0,False,original
+brier,SE − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.0063435792608973,-0.0147410533367298,0.0022039909139868,5,1,0.14,1.0,False,original
+nll,SE − Baseline | DenseNet121 | imbalanced_pretrain-xrv,-0.017586481529916,-0.0473111988183645,0.0075248596528314,5,1,0.187,1.0,False,original
+ece,CBAM − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0034774968596284,-0.0134394369760453,0.0037447567701571,5,2,0.289,1.0,False,original
+cw_ece,CBAM − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0061813782601027,-0.0142837686931192,0.0010698469041398,5,2,0.104,1.0,False,original
+brier,CBAM − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0175972029895173,-0.0405308557542408,-0.0005206423693428,5,1,0.042,0.882,True,original
+nll,CBAM − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0246012303358905,-0.0550062536480199,0.0018087627071637,5,1,0.062,0.868,False,original
+ece,CBAM − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),0.005692616634641,-0.0094505861308788,0.0180794477501422,5,3,0.479,1.0,False,original
+cw_ece,CBAM − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),0.0026780693528249,-0.0030057982257909,0.0071309057648718,5,3,0.413,1.0,False,original
+brier,CBAM − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),0.002216550346202,-0.0202134047274658,0.0266213493784978,5,3,0.871,1.0,False,original
+nll,CBAM − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),-0.0147830983483107,-0.1581354297239165,0.104625608485536,5,3,0.892,1.0,False,original
+ece,CBAM − Baseline | ResNet50 | imbalanced_val-grouped,-0.0015745499950438,-0.0169559027998673,0.0131902866262637,5,3,0.783,1.0,False,original
+cw_ece,CBAM − Baseline | ResNet50 | imbalanced_val-grouped,-0.0039812771382047,-0.0132349205978731,0.0038900549491083,5,2,0.355,1.0,False,original
+brier,CBAM − Baseline | ResNet50 | imbalanced_val-grouped,-0.0094992325251373,-0.0363695169397247,0.0138908876069413,5,3,0.464,1.0,False,original
+nll,CBAM − Baseline | ResNet50 | imbalanced_val-grouped,-0.0404669425764295,-0.1205414252274186,0.0397627135934397,5,2,0.296,1.0,False,original
+ece,SE − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0067227648699175,-0.0167373086676368,0.0029597846813857,5,1,0.175,1.0,False,original
+cw_ece,SE − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0069133999546052,-0.0137709153009687,0.0002624075983022,5,0,0.065,1.0,False,original
+brier,SE − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0143448874441536,-0.0357509939931592,0.0018263126286839,5,0,0.096,1.0,False,original
+nll,SE − Baseline | ResNet50 | imbalanced_lungcrop-True,-0.0229058842009236,-0.0594204378982533,0.0052759061604461,5,0,0.138,1.0,False,original
+ece,SE − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),-0.0037643181210825,-0.0160534794303925,0.0106883658408809,5,1,0.575,1.0,False,original
+cw_ece,SE − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),-0.002459229640083,-0.0080647073553294,0.0042809194322977,5,2,0.449,1.0,False,original
+brier,SE − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),-0.0046570986059643,-0.0260685149898304,0.018548211740509,5,2,0.676,1.0,False,original
+nll,SE − Baseline | ResNet50 | imbalanced_placement-multi (vs main baseline),-0.0672841598159674,-0.155234154168212,0.0227736253052813,5,1,0.133,1.0,False,original
+ece,SE − Baseline | ResNet50 | imbalanced_val-grouped,-0.0018574751536669,-0.0169979205024072,0.0142466183314063,5,3,0.957,1.0,False,original
+cw_ece,SE − Baseline | ResNet50 | imbalanced_val-grouped,-0.0005230888256458,-0.0105367910667671,0.0070247597252589,5,3,0.923,1.0,False,original
+brier,SE − Baseline | ResNet50 | imbalanced_val-grouped,-0.0010427455359631,-0.0320849421334629,0.0238105482087228,5,3,0.958,1.0,False,original
+nll,SE − Baseline | ResNet50 | imbalanced_val-grouped,0.0013807432693651,-0.0983155689044118,0.1036844485301583,5,2,0.981,1.0,False,original
