@@ -109,7 +109,7 @@ Python packages: see [`requirements.txt`](requirements.txt).
 | Table 13 (robustness) | `results/round5/f1_best.csv` (family `rob`), `sensitivity_variants.csv`, `results/lung_crop/` |
 | Suppl. Tables S7–S8 (final epoch; pooled seed-level and random-effects) | `results/round5/f1_final.csv`, `pool_f1_*.csv`, `re_f1_*.csv` |
 | Table 14, Fig. 9 (calibration) | `results/calibration/` |
-| Bootstrap pooled estimates and equivalence tests (sensitivity; Suppl. Tables S4–S5) | `results/round3/pooled_attention.csv`, `equivalence_per_contrast.csv` |
+| Bootstrap pooled estimates and equivalence tests (sensitivity; Suppl. Tables S4–S5) | `python scripts/bootstrap_sensitivity.py` → `results/round5/bootstrap/` |
 | Replicate counts on each side of zero | `results/round3/crossing_counts.csv` |
 | Shortcut probes with 95% CIs (§III-A, §IV-G) | `results/round3/shortcut_probes_ci.csv` |
 | Collapsed run, MobileNetV2 matched baseline, medians | `collapsed_run_sensitivity.csv`, `mobilenet_matched_baseline.csv`, `seed_medians.csv` |
@@ -128,18 +128,26 @@ Python packages: see [`requirements.txt`](requirements.txt).
 
 ## Deposit status
 
-| Item | Status |
-|---|---|
-| Code and notebooks 01–10 | in this repository |
-| Macro F1 / accuracy of all 224 runs, both checkpoints | `results/round5/per_seed_all_runs.csv` |
-| Analysis outputs behind every table (incl. seed-level Tables 7, 13, S6–S8 and Grad-CAM within class, S9) | `results/` |
-| Per-image softmax outputs (`preds.csv`), training histories and `metrics.json` of all 224 runs | **pending** – being exported from Kaggle with notebook 10 |
-| Data-audit outputs of notebook 01 (duplicate groups, leakage flags, test-set exclusion list, shortcut probes) | **pending** – notebook 10 |
-| Grad-CAM per-image and per-seed tables of notebook 05 | **pending** – notebook 10 |
-| Compute table of notebook 04 | **pending** – notebook 10 |
-| Tagged release and Zenodo DOI | **pending** – will be created once the items above are in place, before publication |
+Everything needed to recompute every table without retraining is in this repository.
 
-This table is updated as items are added.
+| Item | Location |
+|---|---|
+| Code and notebooks 01–10 | `notebooks/`, `scripts/` |
+| Per-image softmax outputs (validation + test, best and final checkpoints), training histories and `metrics.json` of all 224 runs (no weights) | `outputs/runs/<run_id>/` |
+| Data-audit outputs of notebook 01: duplicate groups, leakage flags, test-set exclusion list, shortcut probes, file index | `outputs/audit/` |
+| Compute table of notebook 04 | `outputs/compute/` |
+| Grad-CAM per-image and per-seed tables of notebook 05 | `outputs/gradcam/` |
+| Macro F1 / accuracy of all 224 runs, both checkpoints | `results/round5/per_seed_all_runs.csv` |
+| Analysis outputs behind every table | `results/` |
+
+Image files from the Kaggle datasets are not redistributed (audit and Grad-CAM figures that show radiographs are omitted); outputs refer to images by their relative path in the Kaggle dataset.
+
+**Recomputing the attention analyses from the deposited outputs**
+
+```bash
+python scripts/seed_level_primary.py      # Tables 7, 13, S6–S8 (seed-level t / permutation, final epoch, pooled, random effects)
+python scripts/bootstrap_sensitivity.py   # Tables S4–S5 (paired hierarchical bootstrap, B = 2,000)
+```
 
 ---
 

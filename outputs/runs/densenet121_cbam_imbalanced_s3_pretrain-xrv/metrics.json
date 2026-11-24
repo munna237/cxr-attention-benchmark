@@ -1,0 +1,96 @@
+{
+ "status": "done",
+ "run_id": "densenet121_cbam_imbalanced_s3_pretrain-xrv",
+ "arch": "densenet121",
+ "attention": "cbam",
+ "condition": "imbalanced",
+ "seed": 3,
+ "opts": {
+  "pretrain": "xrv"
+ },
+ "params_total": 7082854,
+ "params_trainable": 2295398,
+ "params_attention": 131170,
+ "train_counts": [
+  460,
+  1341,
+  3875,
+  650
+ ],
+ "class_weights": [
+  0.4609506130218506,
+  0.15811878442764282,
+  0.05471930280327797,
+  0.32621121406555176
+ ],
+ "n_train_samples": 6326,
+ "epochs_trained": 33,
+ "best_epoch": 13,
+ "best_val_loss": 0.08112152553114452,
+ "total_train_sec": 434.6300573348999,
+ "mean_epoch_train_sec": 12.880886814811014,
+ "peak_gpu_mem_mb": 299.42041015625,
+ "gpu": "Tesla T4",
+ "torch": "2.11.0+cu130",
+ "use_amp": true,
+ "batch_size": 32,
+ "lr_groups": [
+  [
+   "finetuned_block",
+   0.0001
+  ],
+  [
+   "attention",
+   0.001
+  ],
+  [
+   "head",
+   0.001
+  ]
+ ],
+ "smoke_test": false,
+ "test_best": {
+  "acc": 0.9169909208819714,
+  "macro_f1": 0.9322213807636088,
+  "balanced_acc": 0.9328817932591518,
+  "weighted_f1": 0.9152350787097349,
+  "prec_COVID19": 0.9537037037037037,
+  "rec_COVID19": 0.9716981132075472,
+  "f1_COVID19": 0.9626168224299064,
+  "spec_COVID19": 0.9924812030075187,
+  "prec_NORMAL": 0.9487179487179487,
+  "rec_NORMAL": 0.7905982905982906,
+  "f1_NORMAL": 0.8624708624708624,
+  "spec_NORMAL": 0.9813780260707635,
+  "prec_PNEUMONIA": 0.8894117647058823,
+  "rec_PNEUMONIA": 0.9692307692307692,
+  "f1_PNEUMONIA": 0.9276073619631903,
+  "spec_PNEUMONIA": 0.8766404199475065,
+  "prec_TURBERCULOSIS": 0.9534883720930233,
+  "rec_TURBERCULOSIS": 1.0,
+  "f1_TURBERCULOSIS": 0.9761904761904763,
+  "spec_TURBERCULOSIS": 0.9972602739726028
+ },
+ "test_final": {
+  "acc": 0.9040207522697795,
+  "macro_f1": 0.9092331369445774,
+  "balanced_acc": 0.9178922754394453,
+  "weighted_f1": 0.9021369297748019,
+  "prec_COVID19": 0.9611650485436893,
+  "rec_COVID19": 0.9339622641509434,
+  "f1_COVID19": 0.9473684210526316,
+  "spec_COVID19": 0.9939849624060151,
+  "prec_NORMAL": 0.9378238341968912,
+  "rec_NORMAL": 0.7735042735042735,
+  "f1_NORMAL": 0.8477751756440282,
+  "spec_NORMAL": 0.9776536312849162,
+  "prec_PNEUMONIA": 0.8805620608899297,
+  "rec_PNEUMONIA": 0.9641025641025641,
+  "f1_PNEUMONIA": 0.9204406364749083,
+  "spec_PNEUMONIA": 0.8661417322834646,
+  "prec_TURBERCULOSIS": 0.8541666666666666,
+  "rec_TURBERCULOSIS": 1.0,
+  "f1_TURBERCULOSIS": 0.9213483146067416,
+  "spec_TURBERCULOSIS": 0.9904109589041096
+ }
+}

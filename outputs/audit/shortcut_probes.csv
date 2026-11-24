@@ -1,0 +1,4 @@
+probe,test_acc,test_macro_f1
+"file metadata only (size, format, colour mode, bytes)",0.7107652399481194,0.7202986118648769
+"32x32 thumbnail, central 60% blanked (border only)",0.7263294422827496,0.6589713848976946
+chance (stratified),0.3697137310515257,0.25

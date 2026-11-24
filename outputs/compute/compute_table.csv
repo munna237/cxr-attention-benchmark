@@ -1,0 +1,13 @@
+arch,attention,Model,Attention,params_total_M,params_trainable_M,params_attention_K,GFLOPs,GMACs,cpu_latency_ms_bs1,train_time_balanced,train_time_imbalanced,train_time_imbalanced_unweighted,train_time_oversample
+resnet50,none,ResNet50,Baseline,23.516228,14.972932,0.0,8.174288896,4.087144448,110.5384045000335,"9.6 ± 3.7 min (38 ep, 15 s/ep, n=5)","6.6 ± 1.3 min (33 ep, 12 s/ep, n=5)","6.7 ± 3.1 min (33 ep, 12 s/ep, n=5)","15.4 ± 3.1 min (27 ep, 34 s/ep, n=5)"
+resnet50,se,ResNet50,SE,24.040516,15.49722,524.288,8.175337472,4.087668736,112.70256800003153,"7.8 ± 1.7 min (30 ep, 15 s/ep, n=5)","5.6 ± 1.0 min (28 ep, 12 s/ep, n=5)","8.5 ± 5.4 min (42 ep, 12 s/ep, n=5)","17.0 ± 3.6 min (30 ep, 34 s/ep, n=5)"
+resnet50,cbam,ResNet50,CBAM,24.040614,15.497318,524.386,8.176395652,4.088197826,112.37709099998483,"10.1 ± 2.9 min (38 ep, 16 s/ep, n=5)","9.3 ± 2.5 min (44 ep, 12 s/ep, n=5)",,
+densenet121,none,DenseNet121,Baseline,6.957956,2.164228,0.0,5.66628352,2.83314176,105.2310150000153,"11.5 ± 2.7 min (40 ep, 17 s/ep, n=5)","9.8 ± 2.3 min (43 ep, 13 s/ep, n=5)",,
+densenet121,se,DenseNet121,SE,7.089028,2.2953,131.072,5.666545664,2.833272832,105.46735249999983,"11.5 ± 3.6 min (40 ep, 17 s/ep, n=5)","11.4 ± 4.7 min (49 ep, 14 s/ep, n=5)",,
+densenet121,cbam,DenseNet121,CBAM,7.089126,2.295398,131.17,5.666817412,2.833408706,105.60706799998343,"10.4 ± 1.7 min (35 ep, 17 s/ep, n=5)","8.6 ± 1.4 min (37 ep, 14 s/ep, n=5)",,
+mobilenetv2,none,MobileNetV2,Baseline,2.228996,0.417284,0.0,0.598998784,0.299499392,22.950113499973668,"8.5 ± 4.3 min (52 ep, 10 s/ep, n=5)","5.0 ± 1.3 min (40 ep, 7 s/ep, n=5)",,
+mobilenetv2,se,MobileNetV2,SE,2.433796,0.622084,204.8,0.599408384,0.299704192,23.220296500028326,"6.1 ± 1.3 min (38 ep, 10 s/ep, n=5)","5.1 ± 1.8 min (40 ep, 7 s/ep, n=5)",,
+mobilenetv2,cbam,MobileNetV2,CBAM,2.433894,0.622182,204.898,0.599827588,0.299913794,23.98137699998415,"7.7 ± 1.4 min (47 ep, 10 s/ep, n=5)","5.2 ± 1.7 min (41 ep, 8 s/ep, n=5)",,
+customcnn,none,Custom CNN,Baseline,1.702916,1.702916,0.0,1.936656384,0.968328192,32.39552399998047,"14.3 ± 5.1 min (65 ep, 13 s/ep, n=5)","6.8 ± 0.8 min (39 ep, 10 s/ep, n=5)",,
+customcnn,se,Custom CNN,SE,1.735684,1.735684,32.768,1.93672192,0.96836096,32.92375149999316,"15.7 ± 6.0 min (72 ep, 13 s/ep, n=5)","7.6 ± 2.5 min (44 ep, 10 s/ep, n=5)",,
+customcnn,cbam,Custom CNN,CBAM,1.735782,1.735782,32.866,1.93679706,0.96839853,32.96086149993016,"16.4 ± 2.6 min (74 ep, 13 s/ep, n=5)","8.8 ± 1.6 min (51 ep, 10 s/ep, n=5)",,

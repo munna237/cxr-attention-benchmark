@@ -1,0 +1,39 @@
+hash,n,splits,classes,cross_split,label_conflict,files
+05c43c853e8209bf0423f73a6f0a8c58,2,test,NORMAL,False,False,test/NORMAL/NORMAL2-IM-0246-0001-0002.jpeg; test/NORMAL/NORMAL2-IM-0246-0001-0001.jpeg
+061c1fac2e79c2d435a6d4c1e35894e7,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1619_bacteria_4267.jpeg; train/PNEUMONIA/person1619_bacteria_4268.jpeg
+077fce04eafc798401239d127a84f5f0,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1349_bacteria_3436.jpeg; train/PNEUMONIA/person1349_bacteria_3437.jpeg
+11c7238f135a666dfe39591086fa0320,2,train,TURBERCULOSIS,False,False,train/TURBERCULOSIS/Tuberculosis-509.png; train/TURBERCULOSIS/Tuberculosis-510.png
+13ad2e91b8a719fa6ce0e87a4ea0b8b1,2,train,TURBERCULOSIS,False,False,train/TURBERCULOSIS/Tuberculosis-346.png; train/TURBERCULOSIS/Tuberculosis-348.png
+23cd1cdafc40ad7f67e6d076ffec52ab,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1481_bacteria_3867.jpeg; train/PNEUMONIA/person1481_bacteria_3866.jpeg
+23d698733d4709babc2bf0b40ea67cf4,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person357_virus_734.jpeg; train/PNEUMONIA/person357_virus_735.jpeg
+3eaf3d1e7d169b19c280ff54c291cd0f,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1261_virus_2147.jpeg; train/PNEUMONIA/person1261_virus_2148.jpeg
+4a8541c3e481489acfeb8bd6b58c6e85,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1430_bacteria_3695.jpeg; train/PNEUMONIA/person1430_bacteria_3696.jpeg
+56dea5c125ea059d9de1ce6a7676c00d,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person162_virus_321.jpeg; train/PNEUMONIA/person162_virus_322.jpeg
+62f9117f9c56340e6d34a93de32f320c,2,test,PNEUMONIA,False,False,test/PNEUMONIA/person128_bacteria_606.jpeg; test/PNEUMONIA/person128_bacteria_607.jpeg
+6438db6b162d478c8109e020c3c61b0d,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person688_virus_1282.jpeg; train/PNEUMONIA/person688_virus_1281.jpeg
+684d201b0ef1eeda6d64170a425910d9,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1496_bacteria_3910.jpeg; train/PNEUMONIA/person1496_bacteria_3909.jpeg
+777a2b0044f7b167706917bf274af05b,3,train|val,TURBERCULOSIS,True,False,val/TURBERCULOSIS/Tuberculosis-655.png; train/TURBERCULOSIS/Tuberculosis-2.png; val/TURBERCULOSIS/Tuberculosis-2.png
+78ff1c623db8352507e4530f7eb86e11,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1628_bacteria_4298.jpeg; train/PNEUMONIA/person1628_bacteria_4297.jpeg
+8b643949f1cb8573042b036bd097531c,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person834_bacteria_2748.jpeg; train/PNEUMONIA/person834_bacteria_2747.jpeg
+8db1cdca83b4d591ed0a0f990c512451,3,train|val,TURBERCULOSIS,True,False,train/TURBERCULOSIS/Tuberculosis-1.png; val/TURBERCULOSIS/Tuberculosis-653.png; val/TURBERCULOSIS/Tuberculosis-1.png
+9355430a9242aae9221a95db1f856164,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person401_virus_798.jpeg; train/PNEUMONIA/person401_virus_797.jpeg
+99e09ba874a343a760a4dd3bb7642099,3,train,PNEUMONIA,False,False,train/PNEUMONIA/person258_bacteria_1208.jpeg; train/PNEUMONIA/person258_bacteria_1207.jpeg; train/PNEUMONIA/person258_bacteria_1209.jpeg
+9cadd7257f9242e07fe1f974d5bac139,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person264_bacteria_1230.jpeg; train/PNEUMONIA/person264_bacteria_1231.jpeg
+aad7b85685ac1f8cc8578f9fc797b7cc,2,train,COVID19,False,False,train/COVID19/COVID19(456).jpg; train/COVID19/COVID19(455).jpg
+ab7b3732a223c780a3af4307583878c8,2,train,TURBERCULOSIS,False,False,train/TURBERCULOSIS/Tuberculosis-243.png; train/TURBERCULOSIS/Tuberculosis-244.png
+adf8b53df78fea92adf7ff3e80fb6810,2,test,PNEUMONIA,False,False,test/PNEUMONIA/person1661_virus_2873.jpeg; test/PNEUMONIA/person1661_virus_2872.jpeg
+b0ef364ad24cf8b19c70cf0e8debb1ee,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person124_virus_247.jpeg; train/PNEUMONIA/person124_virus_246.jpeg
+b6e7fa964af9ca72fb90c64ab20b757b,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1481_bacteria_3865.jpeg; train/PNEUMONIA/person1481_bacteria_3864.jpeg
+b7d8223d200f9a48dcb9d598cddae2d6,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1343_bacteria_3413.jpeg; train/PNEUMONIA/person1343_bacteria_3414.jpeg
+c7a269a84528269d8f34e6bceeb4d880,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person30_bacteria_157.jpeg; train/PNEUMONIA/person30_bacteria_156.jpeg
+d0d816134699c8fc6f8678e9727257d3,2,test,COVID19,False,False,test/COVID19/COVID19(481).jpg; test/COVID19/COVID19(480).jpg
+d9a3798fd92e1580286909da52f27506,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person266_bacteria_1238.jpeg; train/PNEUMONIA/person266_bacteria_1237.jpeg
+dcc3ab0eaf19ff80af9d3d254b340da5,2,train,NORMAL,False,False,train/NORMAL/NORMAL2-IM-0587-0001-0001.jpeg; train/NORMAL/NORMAL2-IM-0587-0001-0002.jpeg
+de69d5b43fa9b4894d8b938352ff5650,3,train,PNEUMONIA,False,False,train/PNEUMONIA/person1372_bacteria_3502.jpeg; train/PNEUMONIA/person1372_bacteria_3503.jpeg; train/PNEUMONIA/person1372_bacteria_3501.jpeg
+ec767162c138e35cf6477b472bca6a24,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1481_bacteria_3863.jpeg; train/PNEUMONIA/person1481_bacteria_3862.jpeg
+edbf5c2810fce5b00722716ab730e577,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1159_virus_1944.jpeg; train/PNEUMONIA/person1159_virus_1945.jpeg
+ee1a4aa1a4447f742f55464ef2483060,2,train,PNEUMONIA,False,False,train/PNEUMONIA/person1312_bacteria_3318.jpeg; train/PNEUMONIA/person1312_bacteria_3317.jpeg
+ee8831cc327926a0c259ebc90ad828f5,3,train|val,TURBERCULOSIS,True,False,train/TURBERCULOSIS/Tuberculosis-3.png; val/TURBERCULOSIS/Tuberculosis-657.png; val/TURBERCULOSIS/Tuberculosis-3.png
+f430f3359bdb6b06ebce9008f7d98b7d,2,test,NORMAL,False,False,test/NORMAL/NORMAL2-IM-0173-0001-0001.jpeg; test/NORMAL/NORMAL2-IM-0173-0001-0002.jpeg
+f9528b244ccd49f3d89ead90ba09c520,2,test,NORMAL,False,False,test/NORMAL/NORMAL2-IM-0095-0001.jpeg; test/NORMAL/NORMAL2-IM-0096-0001.jpeg
+fe703b7a0f66f29bfb5dc8a003ec3973,2,test,PNEUMONIA,False,False,test/PNEUMONIA/person134_bacteria_643.jpeg; test/PNEUMONIA/person134_bacteria_644.jpeg

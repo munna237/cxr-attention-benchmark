@@ -1,0 +1,4 @@
+relpath,evidence
+test/COVID19/COVID19(533).jpg,augmented copy aug_COVID19_461_67020ede.png in balanced train (pixel score 0.85)
+test/COVID19/COVID19(532).jpg,augmented copy aug_COVID19_616_57992b8e.png in balanced train (pixel score 0.92)
+test/COVID19/COVID19(534).jpg,confirmed by visual inspection (embedding/pixel flag)

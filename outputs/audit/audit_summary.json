@@ -1,0 +1,19 @@
+{
+ "n_images": 7135,
+ "per_split": {
+  "train": 6326,
+  "test": 771,
+  "val": 38
+ },
+ "exact_dup_groups_md5_file": 38,
+ "exact_dup_cross_split_md5_file": 3,
+ "exact_dup_groups_md5_pixels": 42,
+ "exact_dup_cross_split_md5_pixels": 3,
+ "near_dup_confirmed_pairs": 65,
+ "near_dup_confirmed_cross_split": 7,
+ "shortcut_probe_macro_f1": {
+  "file metadata only (size, format, colour mode, bytes)": 0.7203,
+  "32x32 thumbnail, central 60% blanked (border only)": 0.659,
+  "chance (stratified)": 0.25
+ }
+}

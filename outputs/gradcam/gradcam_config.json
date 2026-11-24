@@ -1,0 +1,282 @@
+{
+ "target": "attention_output",
+ "condition": "imbalanced",
+ "n_images": 771,
+ "n_qc_pass": 761,
+ "qc_rule": [
+  0.08,
+  0.7
+ ],
+ "models": [
+  {
+   "arch": "resnet50",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.9516762049229763,
+   "cfg_mean_f1": 0.9408315402955403
+  },
+  {
+   "arch": "resnet50",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.9450778727198746,
+   "cfg_mean_f1": 0.9408315402955403
+  },
+  {
+   "arch": "resnet50",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.9360935315079558,
+   "cfg_mean_f1": 0.9408315402955403
+  },
+  {
+   "arch": "resnet50",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.944639691548218,
+   "cfg_mean_f1": 0.9408315402955403
+  },
+  {
+   "arch": "resnet50",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.926670400778676,
+   "cfg_mean_f1": 0.9408315402955403
+  },
+  {
+   "arch": "densenet121",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.9363625885542926,
+   "cfg_mean_f1": 0.9333964657143158
+  },
+  {
+   "arch": "densenet121",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.9090385820123114,
+   "cfg_mean_f1": 0.9333964657143158
+  },
+  {
+   "arch": "densenet121",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.9508035286386263,
+   "cfg_mean_f1": 0.9333964657143158
+  },
+  {
+   "arch": "densenet121",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.9409660987133306,
+   "cfg_mean_f1": 0.9333964657143158
+  },
+  {
+   "arch": "densenet121",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.9298115306530184,
+   "cfg_mean_f1": 0.9333964657143158
+  },
+  {
+   "arch": "mobilenetv2",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.8971169273355086,
+   "cfg_mean_f1": 0.8997184033607921
+  },
+  {
+   "arch": "mobilenetv2",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.900195004686149,
+   "cfg_mean_f1": 0.8997184033607921
+  },
+  {
+   "arch": "mobilenetv2",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.9042335040549748,
+   "cfg_mean_f1": 0.8997184033607921
+  },
+  {
+   "arch": "mobilenetv2",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.897016479966319,
+   "cfg_mean_f1": 0.8997184033607921
+  },
+  {
+   "arch": "mobilenetv2",
+   "attention": "none",
+   "why": "best of architecture",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.9000301007610091,
+   "cfg_mean_f1": 0.8997184033607921
+  },
+  {
+   "arch": "customcnn",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.8856612988592915,
+   "cfg_mean_f1": 0.9030623477115464
+  },
+  {
+   "arch": "customcnn",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.9206554295669551,
+   "cfg_mean_f1": 0.9030623477115464
+  },
+  {
+   "arch": "customcnn",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.9074584294267253,
+   "cfg_mean_f1": 0.9030623477115464
+  },
+  {
+   "arch": "customcnn",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.8957317936401031,
+   "cfg_mean_f1": 0.9030623477115464
+  },
+  {
+   "arch": "customcnn",
+   "attention": "cbam",
+   "why": "best of architecture",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.9058047870646573,
+   "cfg_mean_f1": 0.9030623477115464
+  },
+  {
+   "arch": "resnet50",
+   "attention": "se",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.942797784960409,
+   "cfg_mean_f1": 0.9387124970686556
+  },
+  {
+   "arch": "resnet50",
+   "attention": "se",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.9413687693077162,
+   "cfg_mean_f1": 0.9387124970686556
+  },
+  {
+   "arch": "resnet50",
+   "attention": "se",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.942324743072284,
+   "cfg_mean_f1": 0.9387124970686556
+  },
+  {
+   "arch": "resnet50",
+   "attention": "se",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.9278737759202191,
+   "cfg_mean_f1": 0.9387124970686556
+  },
+  {
+   "arch": "resnet50",
+   "attention": "se",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.9391974120826492,
+   "cfg_mean_f1": 0.9387124970686556
+  },
+  {
+   "arch": "resnet50",
+   "attention": "cbam",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 0,
+   "example": false,
+   "test_f1": 0.9437422079813642,
+   "cfg_mean_f1": 0.9361718715808566
+  },
+  {
+   "arch": "resnet50",
+   "attention": "cbam",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 1,
+   "example": false,
+   "test_f1": 0.9162983372856688,
+   "cfg_mean_f1": 0.9361718715808566
+  },
+  {
+   "arch": "resnet50",
+   "attention": "cbam",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 2,
+   "example": false,
+   "test_f1": 0.9521014652994314,
+   "cfg_mean_f1": 0.9361718715808566
+  },
+  {
+   "arch": "resnet50",
+   "attention": "cbam",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 3,
+   "example": false,
+   "test_f1": 0.9188299716282741,
+   "cfg_mean_f1": 0.9361718715808566
+  },
+  {
+   "arch": "resnet50",
+   "attention": "cbam",
+   "why": "ResNet50 family (Figs 4\u20136)",
+   "seed": 42,
+   "example": true,
+   "test_f1": 0.9498873757095447,
+   "cfg_mean_f1": 0.9361718715808566
+  }
+ ]
+}

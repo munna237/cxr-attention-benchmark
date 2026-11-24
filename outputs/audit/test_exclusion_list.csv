@@ -1,0 +1,15 @@
+relpath,reason,list
+test/COVID19/COVID19(481).jpg,repeat copy inside test (exact),clean
+test/COVID19/COVID19(516).jpg,confirmed near-duplicate in train,clean
+test/COVID19/COVID19(532).jpg,leaked into balanced train: augmented copy aug_COVID19_616_57992b8e.png in balanced train (pixel score 0.92),clean
+test/COVID19/COVID19(533).jpg,leaked into balanced train: augmented copy aug_COVID19_461_67020ede.png in balanced train (pixel score 0.85),clean
+test/COVID19/COVID19(534).jpg,leaked into balanced train: confirmed by visual inspection (embedding/pixel flag),clean
+test/NORMAL/NORMAL2-IM-0096-0001.jpeg,repeat copy inside test (exact),clean
+test/NORMAL/NORMAL2-IM-0173-0001-0002.jpeg,repeat copy inside test (exact),clean
+test/NORMAL/NORMAL2-IM-0246-0001-0002.jpeg,repeat copy inside test (exact),clean
+test/PNEUMONIA/person128_bacteria_607.jpeg,repeat copy inside test (exact),clean
+test/PNEUMONIA/person134_bacteria_644.jpeg,repeat copy inside test (exact),clean
+test/PNEUMONIA/person1661_virus_2873.jpeg,repeat copy inside test (exact),clean
+test/COVID19/COVID19(529).jpg,"likely same patient in train (r_hp=0.61, h=4)",strict_only
+test/COVID19/COVID19(531).jpg,"likely same patient in train (r_hp=0.72, h=4)",strict_only
+test/COVID19/COVID19(552).jpg,"likely same patient in train (r_hp=0.83, h=2)",strict_only
