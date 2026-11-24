@@ -1,11 +1,13 @@
 """Round-5 primary analysis: seed-level paired t-tests (95%/90% t-intervals, TOST at +/-0.01 and +/-0.02,
 minimum detectable effect at 80% power) for every attention effect at the best and final checkpoints, pooled
 seed-level estimates (16 main, 12 without MobileNetV2, 8 robustness, collapsed-run sensitivity) and
-DerSimonian-Laird random-effects pooling. Input: results/round3/per_seed_all_runs.csv. Output: results/round5/."""
+DerSimonian-Laird random-effects pooling. MobileNetV2 effects use the dropout-matched baseline
+(variant _head_dropout-0.0); effects against the original dropout baseline are kept as family 'mbdrop'.
+Input: results/round5/per_seed_all_runs.csv (all 224 runs, exported by notebook 09). Output: results/round5/."""
 import itertools, numpy as np, pandas as pd
 from scipy import stats
 import os; ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT=os.path.join(ROOT,'results','round5')+'/'; os.makedirs(OUT,exist_ok=True)
-d=pd.read_csv(os.path.join(ROOT,'results','round3','per_seed_all_runs.csv')); d['variant']=d.variant.fillna('')
+d=pd.read_csv(os.path.join(ROOT,'results','round5','per_seed_all_runs.csv')); d['variant']=d.variant.fillna('')
 AL={'resnet50':'ResNet50','densenet121':'DenseNet121','mobilenetv2':'MobileNetV2','customcnn':'Custom CNN'}; TL={'se':'SE','cbam':'CBAM'}
 def f(a,t,c,v='',ck='f1_best'): return d[(d.arch==a)&(d.attention==t)&(d.condition==c)&(d.variant==v)].set_index('seed')[ck]
 def tci(x,lvl=.95):
@@ -22,7 +24,9 @@ def contrasts(ck):
     for c in ['imbalanced','balanced']:
         for a in AL:
             for t in TL:
-                x=(f(a,t,c,ck=ck)-f(a,'none',c,ck=ck)).dropna(); diffs[('main',a,t,c)]=x
+                bv='_head_dropout-0.0' if a=='mobilenetv2' else ''
+                x=(f(a,t,c,ck=ck)-f(a,'none',c,bv,ck)).dropna(); diffs[('main',a,t,c)]=x
+                if a=='mobilenetv2': diffs[('mbdrop',a,t,c)]=(f(a,t,c,ck=ck)-f(a,'none',c,ck=ck)).dropna()
     for a,v,lab,bv in [('resnet50','_lungcrop-True','lung crop','_lungcrop-True'),('resnet50','_val-grouped','grouped validation','_val-grouped'),('resnet50','_placement-multi','multi-depth',''),('densenet121','_pretrain-xrv','CXR pretraining','_pretrain-xrv')]:
         for t in TL:
             diffs[('rob',a,t,lab)]=(f(a,t,'imbalanced',v,ck)-f(a,'none','imbalanced',bv,ck)).dropna()
@@ -32,7 +36,7 @@ def contrasts(ck):
           t_lo=lo,t_hi=hi,t90_lo=lo9,t90_hi=hi9,p_t=stats.ttest_1samp(x,0).pvalue,p_perm=signflip(x.values),mde80=MDEK*se,
           eq01=bool(lo9>-0.01 and hi9<0.01),eq02=bool(lo9>-0.02 and hi9<0.02)))
     R=pd.DataFrame(rows)
-    for fam in ['main','rob']:
+    for fam in ['main','rob','mbdrop']:
         m=R.family==fam; R.loc[m,'p_t_holm']=holm(R.loc[m,'p_t']); R.loc[m,'p_perm_holm']=holm(R.loc[m,'p_perm'])
     return R,diffs
 def pooled(diffs,keys,label):
@@ -48,7 +52,8 @@ res={}
 for ck in ['f1_best','f1_final']:
     R,diffs=contrasts(ck); R['ckpt']=ck; res[ck]=R
     main=[k for k in diffs if k[0]=='main']; clean=[k for k in main if k[1]!='mobilenetv2']; rob=[k for k in diffs if k[0]=='rob']
-    P=[pooled(diffs,main,'16 main'),pooled(diffs,clean,'12 main (MobileNetV2 excluded)'),pooled(diffs,rob,'8 robustness')]
+    mbd=[k for k in main if k[1]!='mobilenetv2']+[k for k in diffs if k[0]=='mbdrop']
+    P=[pooled(diffs,main,'16 main'),pooled(diffs,mbd,'16 main, dropout MobileNetV2 baseline'),pooled(diffs,clean,'12 main (MobileNetV2 excluded)'),pooled(diffs,rob,'8 robustness')]
     # collapsed run: custom CNN se imbalanced
     x=diffs[('main','customcnn','se','imbalanced')]; x4=x.drop(1)
     P.append(dict(pool='Custom CNN SE imbalanced, all 5',k=1,n_seeds=5,delta=x.mean(),t_lo=tci(x)[0],t_hi=tci(x)[1],p_t=stats.ttest_1samp(x,0).pvalue))

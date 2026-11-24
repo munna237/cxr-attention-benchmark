@@ -16,7 +16,7 @@ We test whether Squeeze-and-Excitation (SE) and the Convolutional Block Attentio
   - Loss-versus-data ablations.
   - Fine-tuning sensitivity runs.
   - Five robustness variants: lung-field cropping, patient-grouped validation, multi-depth attention, chest-radiograph pretraining and downsample-only training.
-  - **215 runs in total.**
+  - **224 runs in total** (including 7 dropout-matched MobileNetV2 baselines and 2 FP32 seed-42 reruns added in round 5).
 - **Statistics.** Attention effects are tested primarily at the seed level (paired t-test on the five per-seed differences, exact sign-flip permutation test, Holm correction within families), at both the best-validation and the final-epoch checkpoint. A paired hierarchical bootstrap over test images and seeds (B = 2,000) is reported as a sensitivity analysis and used for the other contrast families. Pooled effects, equivalence tests (TOST), minimum detectable effects and random-effects pooling are also reported.
 - **Data audit.** The dataset is audited for duplicates, leakage and acquisition-source shortcuts.
 
@@ -24,11 +24,12 @@ We test whether Squeeze-and-Excitation (SE) and the Convolutional Block Attentio
 
 | Quantity | Result |
 |---|---|
-| 16 main attention effects | none with a 95% CI excluding zero; range −0.011 to +0.016; all Holm-adjusted p = 1.00 |
-| Pooled main effect (16) | +0.0001 (95% t-interval −0.0096 to +0.0099); equivalent to zero within ±0.01 (TOST p = 0.024) |
-| Pooled main effect without MobileNetV2 (12) | +0.0025 (−0.0084 to +0.0134); equivalent within ±0.02, not ±0.01 |
+| 16 main attention effects | none survives Holm correction (smallest adjusted p = 0.38); one uncorrected 95% CI excludes zero (SE on balanced MobileNetV2, −0.019; −0.002 at the final epoch); range −0.019 to +0.016 |
+| Pooled main effect (16) | −0.0001 (95% t-interval −0.0073 to +0.0072); equivalent to zero within ±0.01 (TOST p = 0.010) |
+| MobileNetV2 baseline | effects use a dropout-matched baseline (5 seeds per condition); original-baseline results kept as sensitivity |
 | Individual upper 95% limits | 14 of 16 below +0.05; median minimum detectable effect 0.026 |
-| Final-epoch checkpoint | pooled −0.0005 (−0.0027 to +0.0016); 14 of 16 effects equivalent within ±0.02 |
+| Final-epoch checkpoint | pooled −0.0003 (−0.0022 to +0.0015); no interval excludes zero; 14 of 16 equivalent within ±0.02 |
+| Original +0.060 single-seed SE gain | not replicated: seed 42 gives +0.0125 in FP16 and −0.0116 in an FP32 rerun |
 | SE vs CBAM | no difference on any backbone |
 | Pooled robustness effect (8 effects, exploratory) | +0.0070 (95% t-interval +0.0009 to +0.0131) at the best checkpoint; −0.0032 (−0.0118 to +0.0053) at the final epoch |
 | Shortcut probes, never seeing the lung fields | file metadata 0.72; image border only 0.66 |
