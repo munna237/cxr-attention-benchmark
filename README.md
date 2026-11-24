@@ -107,7 +107,7 @@ Python packages: see [`requirements.txt`](requirements.txt).
 | Checkpoint selection (§IV-E) | `checkpoint_best_vs_final.csv`, `checkpoint_by_validation_scheme.csv`, `selection_bias.csv`, `rank1_probability.csv` |
 | Fine-tuning sensitivity (§IV-C) | `sensitivity_variants.csv` |
 | Table 13 (robustness) | `results/round5/f1_best.csv` (family `rob`), `sensitivity_variants.csv`, `results/lung_crop/` |
-| Tables 6, 9, 14 (MobileNetV2 dropout-matched baseline rows, balancing, interaction, calibration); §IV-E checkpoint selection; Suppl. Table S10 (Normal vs Pneumonia) | `python scripts/matched_mobilenet_secondary.py` → `results/round5/secondary/` |
+| Tables 6, 9, 14 (MobileNetV2 dropout-matched baseline rows, balancing, interaction, calibration); §IV-E checkpoint selection; Suppl. Tables S10 (Normal vs Pneumonia) and S11 (balancing and interaction, seed-level at both checkpoints, plus bootstrap) | `python scripts/matched_mobilenet_secondary.py` → `results/round5/secondary/` |
 | Suppl. Tables S7–S8 (final epoch; pooled seed-level and random-effects) | `results/round5/f1_final.csv`, `pool_f1_*.csv`, `re_f1_*.csv` |
 | Table 14, Fig. 9 (calibration) | `results/calibration/` |
 | Bootstrap pooled estimates and equivalence tests (sensitivity; Suppl. Tables S4–S5) | `python scripts/bootstrap_sensitivity.py` → `results/round5/bootstrap/` |
@@ -148,7 +148,7 @@ Image files from the Kaggle datasets are not redistributed (audit and Grad-CAM f
 ```bash
 python scripts/seed_level_primary.py      # Tables 7, 13, S6–S8 (seed-level t / permutation, final epoch, pooled, random effects)
 python scripts/bootstrap_sensitivity.py   # Tables S4–S5 (paired hierarchical bootstrap, B = 2,000)
-python scripts/matched_mobilenet_secondary.py  # Table 6/9/14 MobileNetV2 matched-baseline rows, Normal-vs-Pneumonia (S10), checkpoint selection
+python scripts/matched_mobilenet_secondary.py  # Tables 6, 9, 14 (matched-baseline rows), S10 (Normal vs Pneumonia), S11 (balancing / interaction), checkpoint selection
 ```
 
 ---

@@ -180,3 +180,31 @@ pd.DataFrame([dict(n_runs=len(CK), frac_val_acc_100=(CK.val_acc_best == 1).mean(
 pd.set_option('display.width', 250)
 for f in sorted(os.listdir(OUT)):
     print('==', f); print(pd.read_csv(os.path.join(OUT, f)).round(4).to_string(max_rows=80))
+
+# ── balancing and attention x balancing interaction at the seed level (primary), both checkpoints ──
+PS = pd.read_csv(os.path.join(ROOT, 'results', 'round5', 'per_seed_all_runs.csv')); PS['variant'] = PS.variant.fillna('')
+def fs(a, t, c, v, ck): return PS[(PS.arch == a) & (PS.attention == t) & (PS.condition == c) & (PS.variant == v)].set_index('seed')[f'f1_{ck}']
+rows = []
+for ck in ['best', 'final']:
+    for a in AL:
+        bv = MB if a == 'mobilenetv2' else ''
+        for t in ['none', 'se', 'cbam']:
+            v = bv if t == 'none' else ''
+            x = (fs(a, t, 'balanced', v, ck) - fs(a, t, 'imbalanced', v, ck)).dropna(); lo, hi = tci(x)
+            loo = [x.drop(s).mean() for s in x.index]
+            rows.append(dict(ckpt=ck, family='BALANCING', arch=a, att=t, baseline='dropout-matched' if v else 'standard', delta=x.mean(), t_lo=lo, t_hi=hi,
+                             p_t=stats.ttest_1samp(x, 0).pvalue, p_perm=signflip(x.values), seeds_positive=int((x > 0).sum()), loo_min=min(loo), loo_max=max(loo)))
+        for t in ['se', 'cbam']:
+            x = ((fs(a, t, 'balanced', '', ck) - fs(a, t, 'imbalanced', '', ck)) - (fs(a, 'none', 'balanced', bv, ck) - fs(a, 'none', 'imbalanced', bv, ck))).dropna()
+            lo, hi = tci(x); loo = [x.drop(s).mean() for s in x.index]
+            rows.append(dict(ckpt=ck, family='INTERACTION', arch=a, att=t, baseline='dropout-matched' if bv else 'standard', delta=x.mean(), t_lo=lo, t_hi=hi,
+                             p_t=stats.ttest_1samp(x, 0).pvalue, p_perm=signflip(x.values), seeds_positive=int((x > 0).sum()), loo_min=min(loo), loo_max=max(loo)))
+    # sensitivity: MobileNetV2 with the original baseline
+    x = (fs('mobilenetv2', 'none', 'balanced', '', ck) - fs('mobilenetv2', 'none', 'imbalanced', '', ck)); lo, hi = tci(x)
+    rows.append(dict(ckpt=ck, family='BALANCING-original-MobileNetV2', arch='mobilenetv2', att='none', baseline='original', delta=x.mean(), t_lo=lo, t_hi=hi,
+                     p_t=stats.ttest_1samp(x, 0).pvalue, p_perm=signflip(x.values), seeds_positive=int((x > 0).sum())))
+BI = pd.DataFrame(rows)
+for (ck, fam), idx in BI[BI.family.isin(['BALANCING', 'INTERACTION'])].groupby(['ckpt', 'family']).groups.items():
+    BI.loc[idx, 'p_t_holm'] = holm(BI.loc[idx, 'p_t']); BI.loc[idx, 'p_perm_holm'] = holm(BI.loc[idx, 'p_perm'])
+BI.to_csv(f'{OUT}/balancing_interaction_seed_level.csv', index=False)
+print(BI.round(4).to_string())
